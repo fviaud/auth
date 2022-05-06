@@ -1,0 +1,9 @@
+{% if user %}
+<pre>
+{{ user|tojson }}
+</pre>
+<a href="/api/auth/logout">logout</a>
+{% else %}
+<a href="/api/auth/login/google">login google</a>
+<a href="/api/auth/login/facebook">login facebook</a>
+{% endif %}

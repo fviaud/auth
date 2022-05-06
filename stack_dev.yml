@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  auth:
+    image: auth_atelier:live
+    build:
+      context: ./auth
+      dockerfile: Dockerfile_dev
+    ports:
+      - 80:5000
+    env_file:
+      - ./.env
+    environment:
+      FLASK_DEBUG: 1
+    volumes:
+      - type: bind
+        source: ./auth/
+        target: /app/
+
+  
